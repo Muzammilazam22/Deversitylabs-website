@@ -1,0 +1,139 @@
+.services-page {
+  background-color: #ffffff;
+}
+
+.services-header {
+  padding-top: 160px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.services-page-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.services-page-subtitle {
+  font-size: 1.25rem;
+  color: #4a5568;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.service-block {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.service-grid.reverse {
+  direction: rtl;
+}
+
+.service-grid.reverse > * {
+  direction: ltr;
+}
+
+.service-content h2 {
+  font-size: 2.5rem;
+  color: #1a202c;
+  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.service-content p {
+  font-size: 1.15rem;
+  color: #718096;
+  line-height: 1.7;
+}
+
+/* Custom CSS abstract illustrations instead of raw unDraw SVGs */
+.service-illustration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.02);
+  z-index: 2;
+}
+
+.illustration-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #f8fafc;
+  z-index: -1;
+  transform: scale(1.2);
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--primary);
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 60px;
+  height: 60px;
+  top: -20px;
+  right: -20px;
+}
+
+.shape-2 {
+  width: 40px;
+  height: 40px;
+  bottom: 20px;
+  left: -20px;
+  background-color: var(--secondary);
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  right: -40px;
+  background-color: #3b82f6;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@media (max-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+  .service-grid.reverse {
+    direction: ltr;
+  }
+}
