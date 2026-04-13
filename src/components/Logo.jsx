@@ -3,7 +3,7 @@ import React from 'react';
 const Logo = ({ className, style }) => {
   return (
     <svg 
-      viewBox="0 0 330 40" 
+      viewBox="0 0 370 40" 
       fill="none" 
       stroke="currentColor" 
       strokeWidth="1.2" 
@@ -43,16 +43,16 @@ const Logo = ({ className, style }) => {
       <path d="M 210 5 L 220 20 L 230 5 M 220 20 L 220 35" />
       
       {/* L */}
-      <path d="M 242 5 L 242 35 L 258 35" />
+      <path d="M 257 5 L 257 35 L 273 35" />
       
       {/* A - no crossbar */}
-      <path d="M 268 35 L 278 5 L 288 35" />
+      <path d="M 283 35 L 293 5 L 303 35" />
       
       {/* B - separated loops */}
-      <path d="M 298 5 L 298 35 M 304 5 C 314 5 314 18 304 18 C 318 18 318 35 304 35" />
+      <path d="M 313 5 L 313 35 M 319 5 C 329 5 329 18 319 18 C 333 18 333 35 319 35" />
       
       {/* S */}
-      <path d="M 328 10 C 328 2 316 2 316 10 C 316 20 328 20 328 28 C 328 38 316 38 316 30" />
+      <path d="M 355 10 C 355 2 343 2 343 10 C 343 20 355 20 355 28 C 355 38 343 38 343 30" />
     </svg>
   );
 };

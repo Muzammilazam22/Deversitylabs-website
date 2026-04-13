@@ -57,7 +57,7 @@ const Footer = () => {
               </li>
               <li>
                 <MapPin size={18} className="contact-icon" />
-                <span>123 Innovation Drive,<br/>Tech Silicon Valley, CA</span>
+                <span>123 Innovation Drive,<br />Tech Silicon Valley, CA</span>
               </li>
             </ul>
           </div>

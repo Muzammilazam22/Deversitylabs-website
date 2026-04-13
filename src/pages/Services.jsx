@@ -6,6 +6,10 @@ import service2 from '../assets/service2.png';
 import service3 from '../assets/service3.jpg';
 import service4 from '../assets/service4.png';
 import service5 from '../assets/service5.png';
+import serviceCloud from '../assets/service-cloud.jpg';
+import serviceAPI from '../assets/service-api.jpg';
+import serviceAI from '../assets/service-ai.png';
+import serviceMobileNew from '../assets/service-mobile-new.png';
 import './Services.css';
 
 const servicesData = [
@@ -19,8 +23,9 @@ const servicesData = [
   {
     title: "Cloud Infrastructure",
     desc: "Unlock peak performance with our scalable cloud architecture services. We help you migrate, optimize, and manage cloud environments for maximum reliability.",
-    image: service2,
-    imagePosition: "left"
+    image: serviceCloud,
+    imagePosition: "left",
+    isIsolated: true
   },
   {
     title: "Web Development",
@@ -32,14 +37,23 @@ const servicesData = [
   {
     title: "Mobile Development",
     desc: "We build high-performance native and cross-platform mobile applications that deliver seamless user experiences across iOS and Android devices.",
-    image: service4,
-    imagePosition: "left"
+    image: serviceMobileNew,
+    imagePosition: "left",
+    isIsolated: true
   },
   {
     title: "Backend & API Engineering",
     desc: "Robust back-end systems are the backbone of every great product. We architect secure, scalable APIs and server-side infrastructure that power your applications.",
-    image: service5,
-    imagePosition: "right"
+    image: serviceAPI,
+    imagePosition: "right",
+    isIsolated: true
+  },
+  {
+    title: "AI/ML Development",
+    desc: "We build and integrate intelligent algorithms and machine learning models to empower your digital products with predictive analytics and automation.",
+    image: serviceAI,
+    imagePosition: "left",
+    isIsolated: true
   }
 ];
 
