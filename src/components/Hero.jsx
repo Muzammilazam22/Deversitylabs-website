@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -19,8 +20,43 @@ const Hero = () => {
             As your Technology Partner, DeversityLabs turns vision into reality. We specialize in AI/ML, Salesforce, Hubspot, ServiceNow, and modern Full-Stack development to accelerate your success.
           </p>
           <div className="hero-actions">
-            <a href="#contact-form" className="btn-primary hero-btn">Get Started</a>
-            <a href="/services" className="btn-secondary hero-btn">Explore Services</a>
+            <a 
+              href="#contact-form" 
+              className="btn-primary hero-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById('contact-form');
+                if (target) {
+                  const headerOffset = 80;
+                  const elementPosition = target.getBoundingClientRect().top;
+                  const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                  // Custom fast smooth scroll
+                  const startPosition = window.pageYOffset;
+                  const distance = offsetPosition - startPosition;
+                  const duration = 600; // 600ms is fast but smooth
+                  let start = null;
+
+                  function step(timestamp) {
+                    if (!start) start = timestamp;
+                    const progress = timestamp - start;
+                    const percentage = Math.min(progress / duration, 1);
+                    
+                    // Ease out cubic
+                    const easing = 1 - Math.pow(1 - percentage, 3);
+                    
+                    window.scrollTo(0, startPosition + distance * easing);
+                    if (progress < duration) {
+                      window.requestAnimationFrame(step);
+                    }
+                  }
+                  window.requestAnimationFrame(step);
+                }
+              }}
+            >
+              Get Started
+            </a>
+            <Link to="/services" className="btn-secondary hero-btn">Explore Services</Link>
           </div>
         </div>
       </div>

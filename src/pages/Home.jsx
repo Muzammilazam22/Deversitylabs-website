@@ -6,12 +6,12 @@ import ContactForm from '../components/ContactForm';
 
 const Home = () => {
   return (
-    <>
+    <div className="page-transition">
       <Hero />
       <ServicesGrid />
       <Testimonials />
       <ContactForm />
-    </>
+    </div>
   );
 };
 

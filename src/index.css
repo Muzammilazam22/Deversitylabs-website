@@ -6,13 +6,23 @@
   --text-main: #0B1C3F;
   --text-muted: #6b7280;
   --bg-main: #FFFFFF;
-  --bg-muted: #F2F4F8;
+  --bg-muted: #FFFFFF;
   
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+[data-theme="dark"] {
+  --primary: #9575cd;
+  --primary-light: #b39ddb;
+  --primary-dark: #673AB7;
+  --secondary: #4db6ac;
+  --text-main: #F2F4F8;
+  --text-muted: #9ca3af;
+  --bg-main: #0f172a; /* Slightly lighter than pure black, good for dark mode */
+  --bg-muted: #0f172a;
+}
+
 html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -52,9 +62,11 @@ a {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   gap: 8px;
 }
 .btn-primary:hover {
@@ -71,7 +83,7 @@ a {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -92,3 +104,16 @@ a {
 .mb-8 { margin-bottom: 2rem; }
 .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
 .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+
+.bg-white { background-color: var(--bg-main); }
+.bg-slate-50 { background-color: var(--bg-muted); }
+
+/* Page Transitions - Removed animation for absolute maximum speed */
+.page-transition {
+  opacity: 1;
+}
+
+/* Tactile Active States */
+.btn-primary:active, .btn-secondary:active, .btn-outline:active {
+  transform: scale(0.96) !important;
+}

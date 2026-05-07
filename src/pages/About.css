@@ -1,5 +1,5 @@
 .about-page {
-  background-color: #ffffff;
+  background-color: var(--bg-main);
 }
 
 .about-hero {
@@ -10,14 +10,14 @@
 .about-title {
   font-size: 4rem;
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-main);
   margin-bottom: 24px;
   letter-spacing: -1px;
 }
 
 .about-subtitle {
   font-size: 1.25rem;
-  color: #4a5568;
+  color: var(--text-muted);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
@@ -42,7 +42,7 @@
 .mission-content p {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--text-muted);
 }
 
 .mission-stats {
@@ -52,11 +52,11 @@
 }
 
 .stat-box {
-  background: white;
+  background: var(--bg-main);
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.03);
+  border: 1px solid var(--text-muted);
   text-align: center;
 }
 
@@ -70,7 +70,7 @@
 .stat-label {
   display: block;
   font-size: 1rem;
-  color: #718096;
+  color: var(--text-muted);
   font-weight: 600;
   margin-top: 8px;
 }
@@ -82,12 +82,13 @@
 }
 
 .value-card {
-  background: white;
+  background: var(--bg-main);
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   text-align: center;
   transition: transform 0.3s ease;
+  border: 1px solid var(--text-muted);
 }
 
 .value-card:hover {
@@ -109,12 +110,12 @@
 .value-card h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a202c;
+  color: var(--text-main);
   margin-bottom: 16px;
 }
 
 .value-card p {
-  color: #718096;
+  color: var(--text-muted);
   line-height: 1.6;
 }
 

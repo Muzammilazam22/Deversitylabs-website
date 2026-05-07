@@ -16,27 +16,9 @@
   pointer-events: none;
 }
 
-.glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.15;
-}
-
-.glow-1 {
-  width: 600px;
-  height: 600px;
-  background: var(--primary);
-  top: -200px;
-  right: -100px;
-}
-
-.glow-2 {
-  width: 500px;
-  height: 500px;
-  background: var(--secondary);
-  bottom: -100px;
-  left: -200px;
+/* Removed glow effects for better performance */
+.hero-background {
+  display: none;
 }
 
 .hero-container {

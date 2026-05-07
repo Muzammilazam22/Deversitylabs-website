@@ -7,7 +7,7 @@
 .testimonials-section h2 {
   font-size: 2.25rem;
   font-weight: 800;
-  color: #1a202c;
+  color: var(--text-main);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -38,7 +38,7 @@
 .testimonial-card {
   flex: 0 0 350px;
   scroll-snap-align: center;
-  background: white;
+  background: var(--bg-main);
   border-radius: 12px;
   padding: 40px 30px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
@@ -46,7 +46,7 @@
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  border: 1px solid rgba(0,0,0,0.02);
+  border: 1px solid var(--text-muted);
 }
 
 .stars-wrapper {
@@ -57,7 +57,7 @@
 
 .testimonial-text {
   font-size: 1.05rem;
-  color: #4a5568;
+  color: var(--text-muted);
   line-height: 1.6;
   font-style: italic;
   flex-grow: 1;
@@ -74,7 +74,7 @@
 
 .testimonial-role {
   font-size: 0.85rem;
-  color: #a0aec0;
+  color: var(--text-muted);
 }
 
 .testimonials-controls {

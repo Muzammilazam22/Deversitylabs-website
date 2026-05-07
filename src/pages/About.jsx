@@ -5,9 +5,7 @@ import { Target, Lightbulb, ShieldCheck } from 'lucide-react';
 import './About.css';
 
 const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <div className="about-page">

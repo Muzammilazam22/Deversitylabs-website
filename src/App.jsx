@@ -8,14 +8,17 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Solutions from './pages/Solutions';
 import GenericPage from './pages/GenericPage';
+import ServiceDetail from './pages/ServiceDetail';
 import CustomCursor from './components/CustomCursor';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <Navbar />
         <main>
           <Routes>
@@ -23,6 +26,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/hire" element={<Hire />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/industries" element={<GenericPage title="Industries" description="Explore our tailored software and digital transformation strategies across finance, healthcare, retail, and more. Full content launching soon." />} />
             <Route path="/blog" element={<GenericPage title="Blog & Insights" description="Stay up-to-date with the latest trends in AI, Cloud Infrastructure, and Modern Web Engineering. Articles coming soon." />} />

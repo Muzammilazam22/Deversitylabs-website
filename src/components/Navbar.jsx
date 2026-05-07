@@ -1,51 +1,74 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
 import Logo from './Logo';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
-        <a href="#home" className="logo">
+        <Link to="/" className="logo">
           <Logo className="nav-logo" />
-        </a>
+        </Link>
 
         <nav className="desktop-nav">
           <div className="nav-item-dropdown">
-            <a href="/services" className="nav-link">Services</a>
+            <Link to="/services" className="nav-link">Services</Link>
             <div className="dropdown-menu shadow-lg">
-              <a href="/services#ai" className="dropdown-item">AI Solutions</a>
-              <a href="/services#custom" className="dropdown-item">Custom Software Development</a>
-              <a href="/services#cloud" className="dropdown-item">Cloud Infrastructure Setup</a>
-              <a href="/services#web" className="dropdown-item">Web Development</a>
-              <a href="/services#mobile" className="dropdown-item">Mobile Development</a>
-              <a href="/services#backend" className="dropdown-item">Backend Applications</a>
+              <Link to="/services#custom" className="dropdown-item">Custom Software Development</Link>
+              <Link to="/services#cloud" className="dropdown-item">Cloud Infrastructure Setup</Link>
+              <Link to="/services#web" className="dropdown-item">Web Development</Link>
+              <Link to="/services#mobile" className="dropdown-item">Mobile Development</Link>
+              <Link to="/services#backend" className="dropdown-item">Backend Applications</Link>
+              <Link to="/services#ai" className="dropdown-item">AI Solutions</Link>
             </div>
           </div>
-          <a href="/solutions" className="nav-link">Solutions</a>
-          <a href="/hire" className="nav-link">Hire Us</a>
-          <a href="/industries" className="nav-link">Industries</a>
-          <a href="/about" className="nav-link">About</a>
-          <a href="/blog" className="nav-link">Blog</a>
-          <a href="/careers" className="nav-link">Careers</a>
+          <Link to="/solutions" className="nav-link">Solutions</Link>
+          <Link to="/hire" className="nav-link">Hire Us</Link>
+          <Link to="/industries" className="nav-link">Industries</Link>
+          <Link to="/about" className="nav-link">About</Link>
+          <Link to="/blog" className="nav-link">Blog</Link>
+          <Link to="/careers" className="nav-link">Careers</Link>
           <a href="#contact-form" className="nav-link">Contact</a>
         </nav>
 
         <div className="nav-actions">
+          <button 
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          
           <a href="#contact" className="btn-primary">
-            Book a Call <ArrowRight size={16} />
+            <span>Book a Call</span> <ArrowRight size={16} />
           </a>
           
           <button 
@@ -59,13 +82,13 @@ const Navbar = () => {
 
       {mobileMenuOpen && (
         <div className="mobile-menu">
-          <a href="/services" onClick={() => setMobileMenuOpen(false)}>Services</a>
-          <a href="/solutions" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
-          <a href="/hire" onClick={() => setMobileMenuOpen(false)}>Hire Us</a>
-          <a href="/industries" onClick={() => setMobileMenuOpen(false)}>Industries</a>
-          <a href="/about" onClick={() => setMobileMenuOpen(false)}>About</a>
-          <a href="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</a>
-          <a href="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+          <Link to="/services" onClick={() => setMobileMenuOpen(false)}>Services</Link>
+          <Link to="/solutions" onClick={() => setMobileMenuOpen(false)}>Solutions</Link>
+          <Link to="/hire" onClick={() => setMobileMenuOpen(false)}>Hire Us</Link>
+          <Link to="/industries" onClick={() => setMobileMenuOpen(false)}>Industries</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)}>About</Link>
+          <Link to="/blog" onClick={() => setMobileMenuOpen(false)}>Blog</Link>
+          <Link to="/careers" onClick={() => setMobileMenuOpen(false)}>Careers</Link>
           <a href="#contact-form" onClick={() => setMobileMenuOpen(false)}>Contact</a>
         </div>
       )}
